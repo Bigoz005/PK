@@ -8,7 +8,7 @@ public class HammerSmash : BaseAttack {
     {
         attackName = "Hammer Smash";
         attackDescription = "This is powerfull SledgeHammer.";
-        attackDamage = 15f;
+        attackDamage = 10f;
         attackCost = 0;
     }
 
