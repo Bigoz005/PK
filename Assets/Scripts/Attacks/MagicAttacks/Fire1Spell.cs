@@ -12,3 +12,4 @@ public class Fire1Spell : BaseAttack {
         attackCost = 10f;
     }
 }
+/////
