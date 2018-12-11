@@ -40,16 +40,19 @@ public class BattleStateMachine : MonoBehaviour {
     public Transform Spacer;
 
     public GameObject AttackPanel;
+    public GameObject ItemSelectPanel;
     public GameObject AttackSelectPanel;
     public GameObject EnemySelectPanel;
     public GameObject MagicPanel;
 
     // attack
     public Transform actionSpacer;
+    public Transform itemSelectSpacer;
     public Transform magicSpacer;
     public Transform attackSelectSpacer;
     public GameObject actionButton;
     public GameObject magicButton;
+    public GameObject itemSelectButton;
     public GameObject attackSelectButton;
     private List<GameObject> atkBtns = new List<GameObject>();
 
@@ -64,6 +67,7 @@ public class BattleStateMachine : MonoBehaviour {
         HeroesInBattle.AddRange(GameObject.FindGameObjectsWithTag("Hero"));
         heroInput = HeroGUI.ACTIVATE;
 
+        ItemSelectPanel.SetActive(false);
         AttackSelectPanel.SetActive(false);
         AttackPanel.SetActive(false);
         EnemySelectPanel.SetActive(false);
@@ -223,6 +227,7 @@ public class BattleStateMachine : MonoBehaviour {
 
     void clearAttackPanel()
     {
+        ItemSelectPanel.SetActive(false);
         EnemySelectPanel.SetActive(false);
         AttackPanel.SetActive(false);
         MagicPanel.SetActive(false);
@@ -287,8 +292,34 @@ public class BattleStateMachine : MonoBehaviour {
             MagicAttackButton.GetComponent<Button>().interactable = false;
         }
         
-    }
+        GameObject ItemSelectButton = Instantiate(actionButton) as GameObject;
+        Text ItemSelectButtonText = ItemSelectButton.transform.FindChild("Text").gameObject.GetComponent<Text>();
+        ItemSelectButtonText.text = "Item";
+        ItemSelectButton.GetComponent<Button>().onClick.AddListener(() => Input8());
+        ItemSelectButton.transform.SetParent(actionSpacer, false);
+        atkBtns.Add(ItemSelectButton);
 
+        if (HeroesToManage[0].GetComponent<HeroStateMachine>().hero.ItemsInBag.Count > 0)
+        {
+            IList list = HeroesToManage[0].GetComponent<HeroStateMachine>().hero.ItemsInBag;
+            for (int i = 0; i < list.Count; i++)
+            {
+                BaseItem item = (BaseItem)list[i];
+                GameObject ItemSelectionButton = Instantiate(itemSelectButton) as GameObject;
+                Text ItemButtonText = ItemSelectionButton.transform.FindChild("Text").gameObject.GetComponent<Text>();
+                ItemButtonText.text = item.itemName;
+                AttackButton ATB = ItemSelectionButton.GetComponent<AttackButton>();
+                ATB.ItemToPerform = item;
+                ItemSelectionButton.transform.SetParent(itemSelectSpacer, false);
+                atkBtns.Add(ItemSelectionButton);
+            }
+        }
+        else
+        {
+            ItemSelectButton.GetComponent<Button>().interactable = false;
+        }
+
+    }
     /*
     public void Input1()//attack button
     {
@@ -301,6 +332,17 @@ public class BattleStateMachine : MonoBehaviour {
         EnemySelectPanel.SetActive(true);
     }
     */
+    public void Input1(BaseItem ItemToUse) //choosen item
+    {
+        HeroChoice.Attacker = HeroesToManage[0].name;
+        HeroChoice.AttackersGameObject = HeroesToManage[0];
+        HeroChoice.Type = "Hero";
+
+        HeroChoice.choosenItem = ItemToUse;
+        ItemSelectPanel.SetActive(false);
+        EnemySelectPanel.SetActive(true);
+    }
+
     public void Input2(GameObject choosenEnemy)
     {
         HeroChoice.AttackersTarget = choosenEnemy;
@@ -341,4 +383,9 @@ public class BattleStateMachine : MonoBehaviour {
         EnemySelectPanel.SetActive(true);
     }
 
+    public void Input8()//switching to magic attacks selector
+    {
+        AttackPanel.SetActive(false);
+        ItemSelectPanel.SetActive(true);
+    }
 }
