@@ -9,5 +9,6 @@ public class BaseHero : BaseClass{
     public int dexterity;
     public int agility;
 
+    public List<BaseItem> ItemsInBag = new List<BaseItem>();
     public List<BaseAttack> MagicAttacks = new List<BaseAttack>();
 }

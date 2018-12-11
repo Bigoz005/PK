@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackButton : MonoBehaviour {
 
     public BaseAttack AttackToPerform;
+    public BaseItem ItemToPerform;
 
     public void CastMagicAttack()
     {
@@ -15,4 +16,10 @@ public class AttackButton : MonoBehaviour {
     {
         GameObject.Find("BattleManager").GetComponent<BattleStateMachine>().Input7(AttackToPerform);
     }
+
+    public void UseItem()
+    {
+        GameObject.Find("BattleManager").GetComponent<BattleStateMachine>().Input1(ItemToPerform);
+    }
+
 }
