@@ -9,6 +9,4 @@ public class BaseAttack : MonoBehaviour
     public string attackDescription;
     public float attackDamage;//base damage
     public float attackCost;//Mana cost
-
-
 }

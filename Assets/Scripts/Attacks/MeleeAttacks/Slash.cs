@@ -8,7 +8,7 @@ public class Slash : BaseAttack  {
     {
         attackName = "Slash";
         attackDescription = "Fast Slash Attack.";
-        attackDamage = 10f;
+        attackDamage = 20f;
         attackCost = 0;
     }
 }
