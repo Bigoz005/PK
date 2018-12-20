@@ -30,7 +30,7 @@ public class BattleStateMachine : MonoBehaviour {
         INPUT2, //selectig enemy
         DONE
     }
-
+    
     public HeroGUI heroInput;
 
     public List<GameObject> HeroesToManage = new List<GameObject> ();
@@ -54,6 +54,7 @@ public class BattleStateMachine : MonoBehaviour {
     public GameObject magicButton;
     public GameObject itemSelectButton;
     public GameObject attackSelectButton;
+    
     private List<GameObject> atkBtns = new List<GameObject>();
 
     // enemy buttons
@@ -143,7 +144,7 @@ public class BattleStateMachine : MonoBehaviour {
                 }
                 break;
             case (PerformAction.WIN):
-                Debug.Log("yoo win blyat");
+                Debug.Log("yoo win");
                   for( int i = 0; i< HeroesInBattle.Count; i++)
                   {
                         HeroesInBattle[i].GetComponent<HeroStateMachine>().currentState = HeroStateMachine.TurnState.WAITING;
@@ -151,7 +152,7 @@ public class BattleStateMachine : MonoBehaviour {
 
                 break;
             case (PerformAction.LOSE):
-                Debug.Log("yoo lose bitch");
+                Debug.Log("yoo lose");
             break;
         }
 
@@ -340,7 +341,8 @@ public class BattleStateMachine : MonoBehaviour {
 
         HeroChoice.choosenItem = ItemToUse;
         ItemSelectPanel.SetActive(false);
-        EnemySelectPanel.SetActive(true);
+
+        heroInput = HeroGUI.DONE;
     }
 
     public void Input2(GameObject choosenEnemy)
@@ -383,9 +385,14 @@ public class BattleStateMachine : MonoBehaviour {
         EnemySelectPanel.SetActive(true);
     }
 
-    public void Input8()//switching to magic attacks selector
+    public void Input8()//switching to item selector
     {
         AttackPanel.SetActive(false);
         ItemSelectPanel.SetActive(true);
+        //usage of item 
+      /*  GameObject performer = GameObject.Find(PerformList[0].Attacker);
+
+        HeroStateMachine HSM = performer.GetComponent<HeroStateMachine>();
+        HSM.itemUsage = true;*/
     }
 }

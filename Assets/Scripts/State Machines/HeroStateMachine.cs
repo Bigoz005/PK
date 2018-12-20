@@ -26,6 +26,7 @@ public class HeroStateMachine : MonoBehaviour {
     //IENumerator
     public GameObject EnemyToAttack;
     private bool actionStarted = false;
+    public bool itemUsage = false;
     private Vector3 startPosition;
     private float animSpeed = 12f;
     //dead
@@ -133,35 +134,64 @@ public class HeroStateMachine : MonoBehaviour {
 
         actionStarted = true;
 
-        //animate enemy near hero
-        Vector3 enemyPosition = new Vector3(EnemyToAttack.transform.position.x, EnemyToAttack.transform.position.y - 1.5f, EnemyToAttack.transform.position.z);
-        while (MoveTowardsEnemy(enemyPosition)) { yield return null; }
+        /*if (itemUsage)
+        {
+            //wait
+            yield return new WaitForSeconds(0.5f);
+            //do damage
+            UseItem();
+            //remove this performer from list in BSM - no 2 moves in 1 turn
+            BSM.PerformList.RemoveAt(0);
+            //reset BSM->wait 
+            if (BSM.battleStates != BattleStateMachine.PerformAction.WIN && BSM.battleStates != BattleStateMachine.PerformAction.LOSE)
+            {
+                BSM.battleStates = BattleStateMachine.PerformAction.WAIT;
+                //reset this enemy state
+                cur_cooldown = 0f;
+                currentState = TurnState.PROCESSING;
+            }
+            else
+            {
+                currentState = TurnState.WAITING;
+            }
+            //end coroutine
+            itemUsage = false;
+            actionStarted = false;
+        }
+        else*/
+        {
 
-        //wait
-        yield return new WaitForSeconds(0.5f);
-        //do damage
-        DoDamage();
-        //animate to start position
-        Vector3 firstPosition = startPosition;
-        while (MoveTowardsStart(firstPosition)) { yield return null; }
-        //remove this performer from list in BSM - no 2 moves in 1 turn
-        BSM.PerformList.RemoveAt(0);
-        //reset BSM->wait 
-        if (BSM.battleStates != BattleStateMachine.PerformAction.WIN && BSM.battleStates != BattleStateMachine.PerformAction.LOSE)
-        {
-            BSM.battleStates = BattleStateMachine.PerformAction.WAIT;
-            //reset this enemy state
-            cur_cooldown = 0f;
-            currentState = TurnState.PROCESSING;
-        }
-        else
-        {
-            currentState = TurnState.WAITING;
-        }
-        
-        //end coroutine
-        actionStarted = false;
-        
+            //animate enemy near hero
+            Vector3 enemyPosition = new Vector3(EnemyToAttack.transform.position.x, EnemyToAttack.transform.position.y - 1.5f, EnemyToAttack.transform.position.z);
+            while (MoveTowardsEnemy(enemyPosition)) { yield return null; }
+
+            //wait
+            yield return new WaitForSeconds(0.5f);
+            //do damage
+            DoDamage();
+            //UseItem();
+            //animate to start position
+            Vector3 firstPosition = startPosition;
+            while (MoveTowardsStart(firstPosition)) { yield return null; }
+            //remove this performer from list in BSM - no 2 moves in 1 turn
+            BSM.PerformList.RemoveAt(0);
+            //reset BSM->wait 
+            if (BSM.battleStates != BattleStateMachine.PerformAction.WIN && BSM.battleStates != BattleStateMachine.PerformAction.LOSE)
+            {
+                BSM.battleStates = BattleStateMachine.PerformAction.WAIT;
+                //reset this enemy state
+                cur_cooldown = 0f;
+                currentState = TurnState.PROCESSING;
+            }
+            else
+            {
+                currentState = TurnState.WAITING;
+            }
+
+            //end coroutine
+            itemUsage = false;
+            actionStarted = false;
+        }       
     }
 
     private bool MoveTowardsEnemy(Vector3 target)
@@ -184,6 +214,13 @@ public class HeroStateMachine : MonoBehaviour {
         }
         UpdateHeroPanel();
     }
+
+    //use heal potion
+    void UseItem()
+    {
+        hero.curHP = hero.curHP + BSM.PerformList[0].choosenItem.HPToAdd;
+    }
+
     //do damage
     void DoDamage()
     {
