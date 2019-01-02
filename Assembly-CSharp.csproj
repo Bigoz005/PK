@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{78B42BEC-C559-63E3-6996-7DE1ABC1B6B0}</ProjectGuid>
+    <ProjectGuid>{7CAA93F2-1E62-0FB0-C964-B025594F0F51}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Attacks\AttackButton.cs" />
+    <Compile Include="Assets\Scripts\Attacks\BaseAttack.cs" />
     <Compile Include="Assets\Scripts\Attacks\MagicAttacks\Fire1Spell.cs" />
     <Compile Include="Assets\Scripts\Attacks\MagicAttacks\Ice1Spell.cs" />
     <Compile Include="Assets\Scripts\Attacks\MagicAttacks\Poison1Spell.cs" />
@@ -69,29 +70,54 @@
     <Compile Include="Assets\Scripts\Attacks\MeleeAttacks\Slash.cs" />
     <Compile Include="Assets\Scripts\Attacks\MeleeAttacks\Stab.cs" />
     <Compile Include="Assets\Scripts\Attacks\MeleeAttacks\Uppercut.cs" />
-    <Compile Include="Assets\Scripts\Base Classes\BaseAttack.cs" />
     <Compile Include="Assets\Scripts\Base Classes\BaseClass.cs" />
     <Compile Include="Assets\Scripts\Base Classes\BaseEnemy.cs" />
     <Compile Include="Assets\Scripts\Base Classes\BaseHero.cs" />
     <Compile Include="Assets\Scripts\Base Classes\BaseItem.cs" />
+    <Compile Include="Assets\Scripts\Buttons\BagButton.cs" />
+    <Compile Include="Assets\Scripts\Buttons\CharButton.cs" />
+    <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\Characters.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GUI\EnemySelectButton.cs" />
     <Compile Include="Assets\Scripts\GUI\HeroPanelStats.cs" />
+    <Compile Include="Assets\Scripts\Inventory\BagScript.cs" />
+    <Compile Include="Assets\Scripts\Inventory\CharacterPanel.cs" />
+    <Compile Include="Assets\Scripts\Inventory\InventoryScript.cs" />
+    <Compile Include="Assets\Scripts\Inventory\SlotScript.cs" />
+    <Compile Include="Assets\Scripts\Items\Armor.cs" />
+    <Compile Include="Assets\Scripts\Items\Bag.cs" />
     <Compile Include="Assets\Scripts\Items\HealPotion.cs" />
+    <Compile Include="Assets\Scripts\Items\HealthPotion.cs" />
+    <Compile Include="Assets\Scripts\Items\Item.cs" />
+    <Compile Include="Assets\Scripts\Items\QualityColor.cs" />
+    <Compile Include="Assets\Scripts\IUsable.cs" />
+    <Compile Include="Assets\Scripts\Merchant\Vendor.cs" />
+    <Compile Include="Assets\Scripts\NPC.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Stat.cs" />
     <Compile Include="Assets\Scripts\State Machines\BattleStateMachine.cs" />
     <Compile Include="Assets\Scripts\State Machines\EnemyStateMachine.cs" />
     <Compile Include="Assets\Scripts\State Machines\HeroStateMachine.cs" />
     <Compile Include="Assets\Scripts\Turn Base Combat\HandleTurns.cs" />
+    <Compile Include="Assets\Scripts\UI\HandScript.cs" />
+    <Compile Include="Assets\Scripts\UI\IClickable.cs" />
+    <Compile Include="Assets\Scripts\UI\IDescribable.cs" />
+    <Compile Include="Assets\Scripts\UI\IInteractable.cs" />
+    <Compile Include="Assets\Scripts\UI\IMoveable.cs" />
+    <Compile Include="Assets\Scripts\UI\ObservableStack.cs" />
+    <Compile Include="Assets\Scripts\UIManager.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/micha/Desktop/Projekt/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>E:/Repozytoria/PK/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/micha/Desktop/Projekt/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>E:/Repozytoria/PK/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/micha/Desktop/Projekt/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>E:/Repozytoria/PK/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/micha/Desktop/Projekt/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>E:/Repozytoria/PK/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>E:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -274,7 +300,7 @@
       <HintPath>E:/Program Files/Unity/Editor/Data/Managed/Unity.Locator.dll</HintPath>
     </Reference>
     <Reference Include="Facebook.Unity.Settings">
-      <HintPath>C:/Users/micha/Desktop/Projekt/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+      <HintPath>E:/Repozytoria/PK/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>E:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
