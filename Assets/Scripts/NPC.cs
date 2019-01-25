@@ -12,11 +12,11 @@ public class NPC : Characters, IInteractable
 
     public virtual void Interact()
     {
-        //Debug.Log("Hello");
+        Debug.Log("Hello");
     }
 
     public virtual void StopInteract()
     {
-        //Debug.Log("Bye!");
+        Debug.Log("Bye!");
     }
 }

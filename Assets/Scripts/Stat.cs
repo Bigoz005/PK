@@ -11,9 +11,52 @@ public class Stat : MonoBehaviour {
     private Text statValue;
 
     private float CurrentFill;
-    public float MaxHealthValue { get; set; }
+    public float MyMaxValue { get; set; }
 
     private float CurrentValue;
+
+    public bool IsFull
+    {
+        get { return content.fillAmount == 1; }
+    }
+
+    private float overflow;
+
+    public float MyOverflow
+    {
+        get
+        {
+            float tmp = overflow;
+            overflow = 0;
+            return tmp;
+        }
+    }
+
+    private Text GoldAmount;
+    private int CurrentGold;
+
+    public int MyCurrentGold
+    {
+        get
+        {
+            return CurrentGold;
+        }
+        set
+        {
+            if(value < 0)
+            {
+                CurrentGold = 0;
+            }
+            else
+            {
+                CurrentGold = value;
+            }
+            if(GoldAmount != null)
+            {
+                GoldAmount.text = CurrentGold.ToString();
+            }
+        }
+    }
 
     public float MyCurrentValue
     {
@@ -23,9 +66,10 @@ public class Stat : MonoBehaviour {
         }
         set
         {
-            if(value > MaxHealthValue) //blokada "nadstanu" życia
+            if(value > MyMaxValue) //blokada "nadstanu" życia
             {
-                CurrentValue = MaxHealthValue;
+                overflow = value - MyMaxValue;
+                CurrentValue = MyMaxValue;
             }
             else if(value < 0) //blokada "ujemnego" życia
             {
@@ -36,11 +80,11 @@ public class Stat : MonoBehaviour {
                 CurrentValue = value; //ustawienie wartości
             }
 
-            CurrentFill = CurrentValue / MaxHealthValue;
+            CurrentFill = CurrentValue / MyMaxValue;
 
             if (statValue != null)
             {
-                statValue.text = CurrentValue + "/" + MaxHealthValue;
+                statValue.text = CurrentValue + "/" + MyMaxValue;
             }
         }
     }
@@ -61,7 +105,17 @@ public class Stat : MonoBehaviour {
 
     public void Initialize(float CurrentValue, float MaxValue)
     {
-        MaxHealthValue = MaxValue;
-        MyCurrentValue = CurrentValue;
+        MyMaxValue = MaxValue;
+        MyCurrentValue = CurrentValue;      
+    }
+
+    public void InitializeGold(int CurrentGold)
+    {
+        MyCurrentGold = CurrentGold;
+    }
+
+    public void Reset()
+    {
+        content.fillAmount = 0;
     }
 }

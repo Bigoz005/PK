@@ -8,6 +8,8 @@ TagManager:
   - Hero
   - DeadHero
   - DeadEnemy
+  - Interactable
+  - EnemyPlayer
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - selector
   - 
   - 
   - 
@@ -42,7 +44,7 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: 1
+  - name: 5
     uniqueID: 331993939
     locked: 0
   - name: Default

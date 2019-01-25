@@ -9,6 +9,9 @@ public abstract class Characters : MonoBehaviour
     [SerializeField]
     protected Stat health; //parametr życia wszystkich obiektów
 
+    //[SerializeField]
+    protected Stat gold;
+
     public Stat MyHealth
     {
         get
@@ -17,8 +20,25 @@ public abstract class Characters : MonoBehaviour
         }
     }
 
+    public int MyLevel
+    {
+        get
+        {
+            return level;
+        }
+
+        set
+        {
+            level = value;
+        }
+    }
+
+
     [SerializeField]
     private float speed;
+
+    [SerializeField]
+    private int level;
 
     private Animator animator;
 
@@ -46,8 +66,8 @@ public abstract class Characters : MonoBehaviour
     public void Movement()
     {
 
-        transform.Translate(direction.normalized * speed * Time.deltaTime); //Time.deltaTime = time passed since the last update
-
+        //transform.Translate(direction.normalized * speed * Time.deltaTime); //Time.deltaTime = time passed since the last update
+        transform.Translate(direction * speed); // Musi być bez deltatime jezeli serwer ma to ogarniac
 
         if (direction.x != 0 || direction.y != 0) //rozpoczęcie ruchu
         {

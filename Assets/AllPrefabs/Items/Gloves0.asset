@@ -15,6 +15,7 @@ MonoBehaviour:
   stackSize: 0
   title: Forest gloves
   quality: 0
+  price: 6
   armorType: 3
   hp: 5
   energy: 5

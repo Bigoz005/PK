@@ -15,6 +15,7 @@ MonoBehaviour:
   stackSize: 0
   title: Steel Sabre
   quality: 1
+  price: 25
   armorType: 5
   hp: 0
   energy: 0

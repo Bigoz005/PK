@@ -11,8 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c38fabc92b54ae74bbb1b2ee45249b13, type: 3}
   m_Name: HealthPotion
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 18d367f41bd976f4cbfedaa5cafea057, type: 3}
+  icon: {fileID: 21300000, guid: 3b3f5ad9f939d844d8dd04dcd89dafff, type: 3}
   stackSize: 5
   title: Small Potion of Health
   quality: 0
+  price: 5
   health: 20

@@ -15,6 +15,7 @@ MonoBehaviour:
   stackSize: 0
   title: "POT\u0118\u017BNY miecz"
   quality: 3
+  price: 666
   armorType: 5
   hp: 100
   energy: 50

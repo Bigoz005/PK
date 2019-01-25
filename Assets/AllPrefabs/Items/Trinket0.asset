@@ -15,6 +15,7 @@ MonoBehaviour:
   stackSize: 0
   title: Evening Star
   quality: 2
+  price: 35
   armorType: 2
   hp: 15
   energy: 15

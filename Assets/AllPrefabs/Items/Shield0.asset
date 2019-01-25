@@ -15,6 +15,7 @@ MonoBehaviour:
   stackSize: 0
   title: Crescent Shield
   quality: 2
+  price: 45
   armorType: 6
   hp: 10
   energy: 10

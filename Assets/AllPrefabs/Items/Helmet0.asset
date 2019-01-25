@@ -15,6 +15,7 @@ MonoBehaviour:
   stackSize: 0
   title: Hat of the Forest Gods
   quality: 3
+  price: 55
   armorType: 0
   hp: 7
   energy: 10

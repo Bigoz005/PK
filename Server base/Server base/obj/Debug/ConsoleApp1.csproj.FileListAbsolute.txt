@@ -1,0 +1,17 @@
+C:\Users\Michał\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csprojAssemblyReference.cache
+C:\Users\Michał\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\Michał\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\Michał\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\Michał\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\Michał\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\log4net.dll
+C:\Users\Michał\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Michał\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\SuperSocket.Common.dll
+C:\Users\Michał\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\SuperSocket.Facility.dll
+C:\Users\Michał\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\SuperSocket.SocketBase.dll
+C:\Users\Michał\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\SuperSocket.SocketEngine.dll
+C:\Users\Michał\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\SuperWebSocket.dll
+C:\Users\Michał\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\log4net.xml
+C:\Users\Michał\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Michał\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CopyComplete
+C:\Users\Michał\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\Michał\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

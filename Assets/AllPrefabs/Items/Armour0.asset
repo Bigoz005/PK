@@ -15,9 +15,11 @@ MonoBehaviour:
   stackSize: 0
   title: Leather Armour
   quality: 0
+  price: 12
   armorType: 1
   hp: 10
   energy: 5
   strength: 5
   intellect: 0
   dexterity: 0
+  opis: 

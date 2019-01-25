@@ -21,7 +21,9 @@ public abstract class Item : ScriptableObject, IMoveable, IDescribable
 
     private CharButton charButton;
 
-    
+    [SerializeField]
+    private int price;
+
 
 
     public Sprite MyIcon
@@ -66,9 +68,35 @@ public abstract class Item : ScriptableObject, IMoveable, IDescribable
         }
     }
 
+    public Quality MyQuality
+    {
+        get
+        {
+            return quality;
+        }
+
+    }
+
+    public string MyTitle
+    {
+        get
+        {
+            return title;
+        }
+
+    }
+
+    public int MyPrice
+    {
+        get
+        {
+            return price;
+        }
+    }
+
     public virtual string GetDescription()  //ustawianie opisu itemka
     {
-        return string.Format("<color={0}>* {1} *</color>", QualityColor.MyColors[quality], title);
+        return string.Format("<color={0}>* {1} *</color>", QualityColor.MyColors[MyQuality], MyTitle);
     }
 
     public void Remove()

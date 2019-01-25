@@ -20,18 +20,16 @@ public class GameManager : MonoBehaviour {
 	}
 
     private void ClickTarget()
-    {
-        if(Input.GetMouseButton(1) && !EventSystem.current.IsPointerOverGameObject())
+    { if (Input.GetMouseButtonDown(1) && !EventSystem.current.IsPointerOverGameObject())
         {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, 512);
-
-            if(hit.collider != null && hit.collider.tag == "Interactable")
-            {
-                player.Interact();
-            }
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit2D[] hit = Physics2D.RaycastAll(ray.origin, ray.direction, Mathf.Infinity);
+            foreach (RaycastHit2D h in hit)
+                if (h.transform.tag == "Interactable")
+                    Player.MyInstance.Interact();
         }
     }
 
-    
-  
+
+
 }

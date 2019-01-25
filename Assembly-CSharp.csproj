@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{7CAA93F2-1E62-0FB0-C964-B025594F0F51}</ProjectGuid>
+    <ProjectGuid>{78B42BEC-C559-63E3-6996-7DE1ABC1B6B0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -61,26 +61,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Attacks\AttackButton.cs" />
-    <Compile Include="Assets\Scripts\Attacks\BaseAttack.cs" />
-    <Compile Include="Assets\Scripts\Attacks\MagicAttacks\Fire1Spell.cs" />
-    <Compile Include="Assets\Scripts\Attacks\MagicAttacks\Ice1Spell.cs" />
-    <Compile Include="Assets\Scripts\Attacks\MagicAttacks\Poison1Spell.cs" />
-    <Compile Include="Assets\Scripts\Attacks\MeleeAttacks\HammerSmash.cs" />
-    <Compile Include="Assets\Scripts\Attacks\MeleeAttacks\Slash.cs" />
-    <Compile Include="Assets\Scripts\Attacks\MeleeAttacks\Stab.cs" />
-    <Compile Include="Assets\Scripts\Attacks\MeleeAttacks\Uppercut.cs" />
-    <Compile Include="Assets\Scripts\Base Classes\BaseClass.cs" />
-    <Compile Include="Assets\Scripts\Base Classes\BaseEnemy.cs" />
-    <Compile Include="Assets\Scripts\Base Classes\BaseHero.cs" />
-    <Compile Include="Assets\Scripts\Base Classes\BaseItem.cs" />
     <Compile Include="Assets\Scripts\Buttons\BagButton.cs" />
     <Compile Include="Assets\Scripts\Buttons\CharButton.cs" />
+    <Compile Include="Assets\Scripts\Buttons\VendorButton.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Characters.cs" />
+    <Compile Include="Assets\Scripts\ClientScript.cs" />
+    <Compile Include="Assets\Scripts\Combat System\Attacks\AttackButton.cs" />
+    <Compile Include="Assets\Scripts\Combat System\Attacks\BaseAttack.cs" />
+    <Compile Include="Assets\Scripts\Combat System\Attacks\MagicAttacks\Fire1Spell.cs" />
+    <Compile Include="Assets\Scripts\Combat System\Attacks\MagicAttacks\Ice1Spell.cs" />
+    <Compile Include="Assets\Scripts\Combat System\Attacks\MagicAttacks\Poison1Spell.cs" />
+    <Compile Include="Assets\Scripts\Combat System\Attacks\MeleeAttacks\HammerSmash.cs" />
+    <Compile Include="Assets\Scripts\Combat System\Attacks\MeleeAttacks\Slash.cs" />
+    <Compile Include="Assets\Scripts\Combat System\Attacks\MeleeAttacks\Stab.cs" />
+    <Compile Include="Assets\Scripts\Combat System\Attacks\MeleeAttacks\Uppercut.cs" />
+    <Compile Include="Assets\Scripts\Combat System\Base Classes\BaseClass.cs" />
+    <Compile Include="Assets\Scripts\Combat System\Base Classes\BaseEnemy.cs" />
+    <Compile Include="Assets\Scripts\Combat System\Base Classes\BaseHero.cs" />
+    <Compile Include="Assets\Scripts\Combat System\Base Classes\BaseItem.cs" />
+    <Compile Include="Assets\Scripts\Combat System\ExitGame.cs" />
+    <Compile Include="Assets\Scripts\Combat System\GUI\EnemySelectButton.cs" />
+    <Compile Include="Assets\Scripts\Combat System\GUI\HeroPanelStats.cs" />
+    <Compile Include="Assets\Scripts\Combat System\SceneToBattle.cs" />
+    <Compile Include="Assets\Scripts\Combat System\StartGame.cs" />
+    <Compile Include="Assets\Scripts\Combat System\State Machines\BattleStateMachine.cs" />
+    <Compile Include="Assets\Scripts\Combat System\State Machines\EnemyStateMachine.cs" />
+    <Compile Include="Assets\Scripts\Combat System\State Machines\HeroStateMachine.cs" />
+    <Compile Include="Assets\Scripts\Combat System\StatsHandler.cs" />
+    <Compile Include="Assets\Scripts\Combat System\Turn Base Combat\HandleTurns.cs" />
+    <Compile Include="Assets\Scripts\EnemyPlayerScript.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\GUI\EnemySelectButton.cs" />
-    <Compile Include="Assets\Scripts\GUI\HeroPanelStats.cs" />
     <Compile Include="Assets\Scripts\Inventory\BagScript.cs" />
     <Compile Include="Assets\Scripts\Inventory\CharacterPanel.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryScript.cs" />
@@ -93,13 +104,11 @@
     <Compile Include="Assets\Scripts\Items\QualityColor.cs" />
     <Compile Include="Assets\Scripts\IUsable.cs" />
     <Compile Include="Assets\Scripts\Merchant\Vendor.cs" />
+    <Compile Include="Assets\Scripts\Merchant\VendorItem.cs" />
+    <Compile Include="Assets\Scripts\Merchant\VendorWindow.cs" />
     <Compile Include="Assets\Scripts\NPC.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Stat.cs" />
-    <Compile Include="Assets\Scripts\State Machines\BattleStateMachine.cs" />
-    <Compile Include="Assets\Scripts\State Machines\EnemyStateMachine.cs" />
-    <Compile Include="Assets\Scripts\State Machines\HeroStateMachine.cs" />
-    <Compile Include="Assets\Scripts\Turn Base Combat\HandleTurns.cs" />
     <Compile Include="Assets\Scripts\UI\HandScript.cs" />
     <Compile Include="Assets\Scripts\UI\IClickable.cs" />
     <Compile Include="Assets\Scripts\UI\IDescribable.cs" />
@@ -107,17 +116,18 @@
     <Compile Include="Assets\Scripts\UI\IMoveable.cs" />
     <Compile Include="Assets\Scripts\UI\ObservableStack.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
+    <None Include="Assets\JsonDotNet\link.xml" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>E:/Repozytoria/PK/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>E:/Repozytoria/PKchmura/Projekt/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>E:/Repozytoria/PK/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>E:/Repozytoria/PKchmura/Projekt/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>E:/Repozytoria/PK/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>E:/Repozytoria/PKchmura/Projekt/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:/Repozytoria/PK/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>E:/Repozytoria/PKchmura/Projekt/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>E:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -300,7 +310,7 @@
       <HintPath>E:/Program Files/Unity/Editor/Data/Managed/Unity.Locator.dll</HintPath>
     </Reference>
     <Reference Include="Facebook.Unity.Settings">
-      <HintPath>E:/Repozytoria/PK/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+      <HintPath>E:/Repozytoria/PKchmura/Projekt/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>E:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -319,6 +329,15 @@
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>E:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="SuperSocket.ClientEngine">
+      <HintPath>E:/Repozytoria/PKchmura/Projekt/Assets/SuperSocket.ClientEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="WebSocket4Net">
+      <HintPath>E:/Repozytoria/PKchmura/Projekt/Assets/WebSocket4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>E:/Repozytoria/PKchmura/Projekt/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/micha/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>

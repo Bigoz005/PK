@@ -15,9 +15,11 @@ MonoBehaviour:
   stackSize: 0
   title: Sneaky Boots
   quality: 1
+  price: 18
   armorType: 4
   hp: 0
   energy: 0
   strength: 0
   intellect: 0
   dexterity: 20
+  opis: 
